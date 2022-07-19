@@ -1,0 +1,45 @@
+{% extends "base.html" %} 
+
+{% block title %}Recipes Share{% endblock %} 
+
+{% block content %}
+
+<div class="container mt-4 d-flex justify-content-between align-items-center">
+    <h1 class="text-white-50">Welcome, {{session['first_name']}}</h1>
+    <div>
+        <a href="/user/dashboard" class="btn btn-dark m-3 text-decoration-underline">back to recipes</a>
+        <a href="/user/logout" class="btn btn-dark m-3">Log Out</a>
+    </div>
+</div>
+
+<div class="container d-flex justify-content-between align-items-center">
+    <h1 class="display-6 text-success">{{recipe.name}}</h1>  
+    <div>
+        <p class="lead">Posted by: {{user.first_name}}</p>
+    </div>
+</div>
+
+<div class="container">
+    <table class="table table-info table-striped">
+        <tbody>
+            <tr>
+                <th>Description</th>
+                <td>{{recipe.description}}</td>
+            </tr>
+            <tr>
+                <th>Under 30 minutes?</th>
+                <td>{{recipe.under}}</td>
+            </tr>
+            <tr>
+                <th>Instructions</th>
+                <td>{{recipe.instructions}}</td>
+            </tr>
+            <tr>
+                <th>Date Made</th>
+                <td>{{recipe.date_made}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
